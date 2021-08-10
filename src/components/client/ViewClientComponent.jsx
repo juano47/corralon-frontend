@@ -25,16 +25,12 @@ class ViewClientComponent extends Component {
                     <h3 className = "text-center"> View Client Details</h3>
                     <div className = "card-body">
                         <div className = "row">
-                            <label> First Name: </label>
-                            <div> { this.state.client.nombre }</div>
+                            <label> Company Name: </label>
+                            <div> { this.state.client.razonSocial }</div>
                         </div>
                         <div className = "row">
-                            <label> Last Name: </label>
-                            <div> { this.state.client.apellido }</div>
-                        </div>
-                        <div className = "row">
-                            <label> Dni: </label>
-                            <div> { this.state.client.dni }</div>
+                            <label> CUIT: </label>
+                            <div> { this.state.client.cuit }</div>
                         </div>
                         <div className = "row">
                             <label> Email: </label>

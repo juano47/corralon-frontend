@@ -57,8 +57,7 @@ class CreateClientComponent extends Component {
                         username: client.user.user,
                         password: client.user.password
                     },
-                    works: client.obras
-
+                    works: works
                 });
             });
         }
