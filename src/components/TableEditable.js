@@ -92,7 +92,7 @@ class TableEditable extends Component {
                         console.log(`current editing column: ${column.dataField}`);*/
                         return [{
                             value: '',
-                            label: ''
+                            label: 'Choose...'
                         }, {
                             value: 'Vivienda',
                             label: 'Vivienda'

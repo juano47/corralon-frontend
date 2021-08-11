@@ -16,6 +16,10 @@ class ClientService {
         return axios.get(CLIENT_API_BASE_URL + '/' + clientId);
     }
 
+    getClientByWorkId(workId){
+        return axios.get(CLIENT_API_BASE_URL + '/?idObra=' + workId);
+    }
+
     updateClient(client, clientId){
         return axios.put(CLIENT_API_BASE_URL + '/' + clientId, client);
     }

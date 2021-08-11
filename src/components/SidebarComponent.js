@@ -3,7 +3,7 @@ import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import {FaGem, FaHeart} from "react-icons/fa";
 import {Link} from "react-router-dom";
-import {ImUsers} from "react-icons/all";
+import {BiBuildingHouse, ImUsers} from "react-icons/all";
 
 class SidebarComponent extends Component{
     render(){
@@ -21,6 +21,10 @@ class SidebarComponent extends Component{
                             <Link to="/clients" />
                         </MenuItem>
                     </SubMenu>
+                    <MenuItem icon={<BiBuildingHouse />}>
+                        Works
+                        <Link to="/works" />
+                    </MenuItem>
                 </Menu>
             </ProSidebar>
         );

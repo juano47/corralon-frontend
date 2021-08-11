@@ -10,6 +10,9 @@ import SidebarComponent from "./components/SidebarComponent";
 import CreateClientComponent from "./components/client/CreateClientComponent";
 import ViewClientComponent from "./components/client/ViewClientComponent";
 import ListClientComponent from "./components/client/ListClientComponent";
+import ListWorkComponent from "./components/work/ListWorkComponent";
+import CreateWorkComponent from "./components/work/CreateWorkComponent";
+import ViewWorkComponent from "./components/work/ViewWorkComponent";
 
 function App() {
     return (
@@ -31,6 +34,9 @@ function App() {
                             <Route path = "/clients" component = {ListClientComponent}/>
                             <Route path = "/add-client/:id" component = {CreateClientComponent}/>
                             <Route path = "/view-client/:id" component = {ViewClientComponent}/>
+                            <Route path = "/works" component = {ListWorkComponent}/>
+                            <Route path = "/add-work/:id" component = {CreateWorkComponent}/>
+                            <Route path = "/view-work/:id" component = {ViewWorkComponent}/>
                         </Switch>
                         {/*<FooterComponent />*/}
 
