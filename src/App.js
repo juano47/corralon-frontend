@@ -13,6 +13,9 @@ import ListClientComponent from "./components/client/ListClientComponent";
 import ListWorkComponent from "./components/work/ListWorkComponent";
 import CreateWorkComponent from "./components/work/CreateWorkComponent";
 import ViewWorkComponent from "./components/work/ViewWorkComponent";
+import CreateProductComponent from "./components/product/CreateProductComponent";
+import ListProductComponent from "./components/product/ListProductComponent";
+import ViewProductComponent from "./components/product/ViewProductComponent";
 
 function App() {
     return (
@@ -37,6 +40,9 @@ function App() {
                             <Route path = "/works" component = {ListWorkComponent}/>
                             <Route path = "/add-work/:id" component = {CreateWorkComponent}/>
                             <Route path = "/view-work/:id" component = {ViewWorkComponent}/>
+                            <Route path = "/products" component = {ListProductComponent}/>
+                            <Route path = "/add-product/:id" component = {CreateProductComponent}/>
+                            <Route path = "/view-product/:id" component = {ViewProductComponent}/>
                         </Switch>
                         {/*<FooterComponent />*/}
 

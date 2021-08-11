@@ -9,7 +9,6 @@ class EmployeeService {
     }
 
     createEmployee(employee){
-        console.log("POST Employee")
         return axios.post(EMPLOYEE_API_BASE_URL, employee);
     }
 
@@ -18,7 +17,6 @@ class EmployeeService {
     }
 
     updateEmployee(employee, employeeId){
-        console.log("PUT Employee")
         return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId, employee);
     }
 
