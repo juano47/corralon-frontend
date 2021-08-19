@@ -7,8 +7,10 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
+    "axios-jwt": "^1.7.1",
     "bootstrap": "^4.5.0",
     "mdbreact": "^5.1.0",
+    "qs": "^6.10.1",
     "react": "^16.13.1",
     "react-bootstrap-table-next": "^4.0.3",
     "react-bootstrap-table2-editor": "^1.4.0",
@@ -38,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "resolve": "^1.20.0"
   }
 }

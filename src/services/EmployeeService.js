@@ -1,27 +1,29 @@
-import axios from 'axios';
+import axios from "axios";
+import {axiosAuth} from "./AuthService";
 
 const EMPLOYEE_API_BASE_URL = "http://localhost:8084/api/empleados";
 
 class EmployeeService {
 
-    getEmployees(){
-        return axios.get(EMPLOYEE_API_BASE_URL);
+
+    async getEmployees() {
+        return axiosAuth.get(EMPLOYEE_API_BASE_URL);
     }
 
     createEmployee(employee){
-        return axios.post(EMPLOYEE_API_BASE_URL, employee);
+        return axiosAuth.post(EMPLOYEE_API_BASE_URL, employee);
     }
 
     getEmployeeById(employeeId){
-        return axios.get(EMPLOYEE_API_BASE_URL + '/' + employeeId);
+        return axiosAuth.get(EMPLOYEE_API_BASE_URL + '/' + employeeId);
     }
 
     updateEmployee(employee, employeeId){
-        return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId, employee);
+        return axiosAuth.put(EMPLOYEE_API_BASE_URL + '/' + employeeId, employee);
     }
 
     deleteEmployee(employeeId){
-        return axios.delete(EMPLOYEE_API_BASE_URL + '/' + employeeId);
+        return axiosAuth.delete(EMPLOYEE_API_BASE_URL + '/' + employeeId);
     }
 }
 

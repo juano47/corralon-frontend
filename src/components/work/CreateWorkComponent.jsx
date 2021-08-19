@@ -51,6 +51,7 @@ class CreateWorkComponent extends Component {
                     id: client.id,
                     companyName: client.razonSocial
                 },
+
             });
 
         }
@@ -175,7 +176,7 @@ class CreateWorkComponent extends Component {
                                     <div className="form-group">
                                         <label> Client: </label>
                                         <select className="custom-select" onChange={this.selectClientHandler}
-                                            value={this.state.id}>
+                                            value={this.state.client.id}>
                                             <option selected>Choose...</option>
                                             {this.state.clients.map((client) => {
                                                 return (

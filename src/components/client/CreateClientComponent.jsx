@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ClientService from '../../services/ClientService';
 import TableEditable from "../TableEditable";
+import {Type} from "react-bootstrap-table2-editor";
 
 class CreateClientComponent extends Component {
     constructor(props) {
@@ -37,6 +38,7 @@ class CreateClientComponent extends Component {
                 const works = client.obras.map(work => {
                     return(
                         {
+                            id: work.id,
                             descripcion: work.descripcion,
                             latitud: work.latitud,
                             longitud: work.longitud,
@@ -54,7 +56,7 @@ class CreateClientComponent extends Component {
                     email : client.mail,
                     user: {
                         id: client.user.id,
-                        username: client.user.user,
+                        username: client.user.username,
                         password: client.user.password
                     },
                     works: works
@@ -95,7 +97,7 @@ class CreateClientComponent extends Component {
             maxCuentaCorriente: this.state.maxLimitCheckingAccount,
             user: {
                 id: this.state.user.id,
-                user: this.state.user.username,
+                username: this.state.user.username,
                 password: this.state.user.password,
                 tipoUsuario:{
                     id: 1,
@@ -162,7 +164,7 @@ class CreateClientComponent extends Component {
         if(!row.id){
             return;
         }
-        console.log('entra a add row' + JSON.stringify(row))
+        console.log('entra a delete row' + JSON.stringify(row))
 
         let works = this.state.works.slice();
 
@@ -191,6 +193,55 @@ class CreateClientComponent extends Component {
     }
 
     render() {
+        const columns = [
+            {
+                dataField: 'descripcion',
+                text: 'Description'
+            },
+            {
+                dataField: 'latitud',
+                text: 'Latitude'
+            },
+            {
+                dataField: 'longitud',
+                text: 'Longitude'
+            },
+            {
+                dataField: 'direccion',
+                text: 'Address'
+            },
+            {
+                dataField: 'superficie',
+                text: 'Area'
+            },
+            {
+                dataField: 'type',
+                text: 'Type',
+                editor: {
+                    type: Type.SELECT,
+                    getOptions: (setOptions, { row, column }) => {
+                        /*console.log(`current editing row id: ${row.id}`);
+                        console.log(`current editing column: ${column.dataField}`);*/
+                        return [{
+                            value: '',
+                            label: 'Choose...'
+                        }, {
+                            value: 'Vivienda',
+                            label: 'Vivienda'
+                        }, {
+                            value: 'Edificio',
+                            label: 'Edificio'
+                        }, {
+                            value: 'Reforma',
+                            label: 'Reforma'
+                        }, {
+                            value: 'Vial',
+                            label: 'Vial'
+                        }];
+                    }
+                }
+            }
+        ]
         return (
             <div>
                 <br></br>
@@ -236,6 +287,7 @@ class CreateClientComponent extends Component {
                                         <h4>Works</h4>
                                         <TableEditable
                                             data={this.state.works}
+                                            columns={columns}
                                             onTableChange={(row, action) => this.handleTableChange(row, action)}
                                         />
                                     </div>

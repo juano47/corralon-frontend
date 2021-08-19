@@ -16,12 +16,21 @@ import ViewWorkComponent from "./components/work/ViewWorkComponent";
 import CreateProductComponent from "./components/product/CreateProductComponent";
 import ListProductComponent from "./components/product/ListProductComponent";
 import ViewProductComponent from "./components/product/ViewProductComponent";
+import ListOrderComponent from "./components/order/ListOrderComponent";
+import CreateOrderComponent from "./components/order/CreateOrderComponent";
+import ViewOrderComponent from "./components/order/ViewOrderComponent";
+import LoginComponent from "./components/auth/LoginComponent";
+import {getAccessToken} from "axios-jwt";
 
 function App() {
+    if (!getAccessToken()) {
+        return (
+            <LoginComponent/>
+        );
+    }
     return (
         <div>
             <HeaderComponent />
-
             <div className="container row">
                 <Router>
                     <div className="col-md-3">
@@ -43,6 +52,10 @@ function App() {
                             <Route path = "/products" component = {ListProductComponent}/>
                             <Route path = "/add-product/:id" component = {CreateProductComponent}/>
                             <Route path = "/view-product/:id" component = {ViewProductComponent}/>
+                            <Route path = "/orders" component = {ListOrderComponent}/>
+                            <Route path = "/add-order/:id" component = {CreateOrderComponent}/>
+                            <Route path = "/view-order/:id" component = {ViewOrderComponent}/>
+                            <Route path = "/login" component = {LoginComponent}/>
                         </Switch>
                         {/*<FooterComponent />*/}
 

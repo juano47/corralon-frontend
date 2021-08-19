@@ -57,7 +57,7 @@ class CreateEmployeeComponent extends Component {
             mail: this.state.email,
             user: {
                 id: this.state.user.id,
-                user: this.state.user.username,
+                username: this.state.user.username,
                 password: this.state.user.password,
                 tipoUsuario:{
                     id: 2,

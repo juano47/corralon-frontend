@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import {ProSidebar, Menu, MenuItem, SubMenu, SidebarFooter} from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
-import {FaGem, FaHeart} from "react-icons/fa";
+import {FaGem} from "react-icons/fa";
 import {Link} from "react-router-dom";
-import {BiBuildingHouse, ImUsers, RiProductHuntLine} from "react-icons/all";
+import {AiOutlineLogout, BiBuildingHouse, GoListOrdered, ImUsers, RiProductHuntLine} from "react-icons/all";
+import {logout} from "../services/AuthService";
 
 class SidebarComponent extends Component{
     render(){
@@ -29,7 +30,21 @@ class SidebarComponent extends Component{
                         Products
                         <Link to="/products" />
                     </MenuItem>
+                    <MenuItem icon={<GoListOrdered />}>
+                        Orders
+                        <Link to="/orders" />
+                    </MenuItem>
                 </Menu>
+                <SidebarFooter>
+                    <Menu iconShape="square">
+                        <MenuItem
+                            icon={<AiOutlineLogout />}
+                            onClick={logout}>
+                            Logout
+                            <Link to="/" />
+                        </MenuItem>
+                    </Menu>
+                </SidebarFooter>
             </ProSidebar>
         );
     }

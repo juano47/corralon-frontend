@@ -1,31 +1,32 @@
 import axios from 'axios';
+import {axiosAuth} from "./AuthService";
 
 const CLIENT_API_BASE_URL = "http://localhost:8084/api/cliente";
 
 class ClientService {
 
     getClients(){
-        return axios.get(CLIENT_API_BASE_URL);
+        return axiosAuth.get(CLIENT_API_BASE_URL);
     }
 
     createClient(client){
-        return axios.post(CLIENT_API_BASE_URL, client);
+        return axiosAuth.post(CLIENT_API_BASE_URL, client);
     }
 
     getClientById(clientId){
-        return axios.get(CLIENT_API_BASE_URL + '/' + clientId);
+        return axiosAuth.get(CLIENT_API_BASE_URL + '/' + clientId);
     }
 
     getClientByWorkId(workId){
-        return axios.get(CLIENT_API_BASE_URL + '/?idObra=' + workId);
+        return axiosAuth.get(CLIENT_API_BASE_URL + '/?idObra=' + workId);
     }
 
     updateClient(client, clientId){
-        return axios.put(CLIENT_API_BASE_URL + '/' + clientId, client);
+        return axiosAuth.put(CLIENT_API_BASE_URL + '/' + clientId, client);
     }
 
     deleteClient(clientId){
-        return axios.delete(CLIENT_API_BASE_URL + '/' + clientId);
+        return axiosAuth.delete(CLIENT_API_BASE_URL + '/' + clientId);
     }
 }
 
