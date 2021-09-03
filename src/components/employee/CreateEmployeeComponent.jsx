@@ -40,7 +40,6 @@ class CreateEmployeeComponent extends Component {
                     user: {
                         id: employee.user.id,
                         username: employee.user.user,
-                        password: employee.user.password
                     }
 
                 });

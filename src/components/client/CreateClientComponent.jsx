@@ -57,7 +57,6 @@ class CreateClientComponent extends Component {
                     user: {
                         id: client.user.id,
                         username: client.user.username,
-                        password: client.user.password
                     },
                     works: works
                 });
